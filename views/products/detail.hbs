@@ -1,0 +1,26 @@
+<section class="container">
+
+    <article class="portada" style="background-image:url('{{product.photos.[0]}}')"></article>
+    <h2>{{product.name}} - {{product.user.username}}</h2>
+    <p>
+        {{product.desc}}
+    </p>
+    <h3>$ {{product.price}}.00 MXN</h3>
+
+</section>
+
+<section class="container">
+    <h2>Comentarios:</h2>
+    {{#each product.reviews}}
+    <p>{{this.user.username}} - {{this.body}}</p>
+    {{else}}
+    <h3>Aún no hay comentarios</h3>
+    {{/each}}
+    <form action="/products/{{product._id}}" method="post">
+        <input type="text" placeholder="tu nombre" name="name"/>
+        <br>
+        <textarea name="body" id="" cols="30" rows="10"></textarea>
+        <br>
+        <input type="submit">
+    </form>
+</section>

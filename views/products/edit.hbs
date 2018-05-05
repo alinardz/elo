@@ -1,0 +1,18 @@
+<section class="container">
+<form action="/products/{{product._id}}/edit" method="post">
+    <input value="{{product.name}}" class="form-control" type="text" placeholder="Nombre de tu producto" name="name" />
+    <br>
+    <input value="{{product.price}}" class="form-control" name="price" type="number" placeholder="el precio"/>
+    <br>
+    <label>Descripcion:</label>
+    <textarea class="form-control" name="desc" cols="30" rows="5">{{product.desc}}</textarea>
+    <br>
+    <label >
+        Producto Activo: 
+        <input value="{{product.active}}" type="checkbox" name="active"/>
+    </label>
+    <br>
+    <input type="submit" class="btn btn-primary">
+</form>
+
+</section>

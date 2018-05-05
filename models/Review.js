@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
@@ -7,20 +7,20 @@ const reviewSchema = new Schema({
         default: true
     },
     name: String,
-    body,
-    String,
+    body: String,
     user: {
-        type: Schema.Types.ObjectID,
+        type: Schema.Types.ObjectId,
         ref: "User"
     },
     product: {
         type: Schema.Types.ObjectId,
         ref: "Product"
     }
+
 }, {
     timestamps: {
         createdAt: "created_at",
-        updatedAt: "updated_at"
+        updatedAt: "updates_at"
     }
 });
 
