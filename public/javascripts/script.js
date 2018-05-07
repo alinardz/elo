@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 }, false);
 
-$("#cat").mouseover(function() {
-    console.log("SOBRES");
+$(".over").mouseover(function(){
+    $("#lista").removeClass("none");
+    $("#lista").addClass("show");
+});
+
+$(".over").mouseout(function(){
+    $("#lista").removeClass("show");
+    $("#lista").addClass("none");
 });
