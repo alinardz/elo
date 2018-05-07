@@ -10,6 +10,8 @@ const logger = require('morgan');
 const path = require('path');
 const passport = require('./helpers/passport');
 const session = require('express-session');
+//mailing
+LocalStrategy = require('passport-local').Strategy;
 
 
 mongoose.Promise = Promise;
