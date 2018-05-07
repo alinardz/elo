@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const PassportLocalMongooseEmail = require('passport-local-mongoose-email');
 const PassportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
@@ -14,6 +15,12 @@ const userSchema = new Schema({
         enum: ["ADMIN", "USER"],
         default: "USER"
     },
+    status: {
+        type: String,
+        enum: ["Pending Confirmation", "Active"],
+        default: "Pending Confirmation"
+    },
+    confirmationCode: String,
     products: [{
         type: Schema.Types.ObjectId,
         ref: "Product"
@@ -26,4 +33,5 @@ const userSchema = new Schema({
 });
 
 userSchema.plugin(PassportLocalMongoose, { usernameField: "email" });
+userSchema.plugin(PassportLocalMongooseEmail, { usernameField: "email" });
 module.exports = mongoose.model("User", userSchema);
