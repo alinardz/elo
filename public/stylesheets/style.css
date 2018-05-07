@@ -1,11 +1,17 @@
 * {
-  font-family: 'Montserrat', sans-serif; }
+  font-family: 'Montserrat', sans-serif;
+}
+
 
 button:focus {
   outline: 0; }
 
 a:focus {
   outline: 0; }
+
+a {
+  text-decoration: none; 
+}
 
 .colorTextMenu {
   color: black; }
@@ -17,7 +23,7 @@ a:focus {
   margin: 0px;
   width: 100%;
   height: 80vh;
-  background-image: url("image/ecommerce.jpg");
+  background-image: url("categories/tecnologia/camara.jpg");
   background-size: cover;
   background-repeat: no-repeat; }
 
