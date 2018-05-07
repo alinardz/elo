@@ -1,14 +1,102 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Elo - Renta lo que sea</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>ELO-Renta lo que alguien necesita</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/materialize.css">
   </head>
+
+
   <body>
+  <ul id="categorias" class="dropdown-content">
+            <li><a href="#!">Tecnología</a></li>
+            <li><a href="#!">Ropa y Accesorios</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">Vehículos</a></li>
+            <li><a href="#!">Herramientas</a></li>
+            <li><a href="#!">Libros</a></li>
+            <li><a href="#!">Inmuebles</a></li>
+  </ul>
+
+
+<nav>
+        <div class="nav-wrapper white">
+          <a href="#!" class="brand-logo center black-text">ELO</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons black">menu</i></a>
+          <ul class="center hide-on-med-and-down">
+            <li><a class="dropdown-trigger colorTextMenu" href="#!" data-target="categorias" id="cat">Categorías<i class="material-icons right">arrow_drop_down</i></a></li>
+            <li><a href="#" class="colorTextMenu">Components</a></li>
+          </ul>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#modal1" class="colorTextMenu modal-trigger">Crea tu cuenta</a></li>
+            <li><a href="#" class="colorTextMenu">Ingresa</a></li>
+          </ul>
+        </div>
+</nav>
+    
+      <ul class="sidenav text-black" id="mobile-demo">
+        <li><a href="#" class="colorTextMenu">Categorías</a></li>
+        <li><a href="#" class="colorTextMenu">Components</a></li>
+        <li><a href="#" class="colorTextMenu">Javascript</a></li>
+        <li><a href="#" class="colorTextMenu">Mobile</a></li>
+      </ul>
+    
+    <!--Principal-->
+    <div id="busqueda">
+        <input type="seach" name="search" placeholder="Busca lo que necesites!" class="search">  
+    </div>
+
+      
+    </div>
 
     {{{body}}}
 
+
+<!--FOOTER-->
+ <footer class="page-footer cyan">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Redes sociales</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <a href="https://play.google.com/store"><img src="./public/images/gp.png" alt="" width="200" height="65"></a>
+                    <a href="https://www.apple.com/mx/ios/app-store/"><img src="./public/images/appstore.png" width="200" height="65"></a>
+                  </div>
+              </div>
+            </div>
+  <div class="footer-copyright">
+              <div class="container">
+              © 2018 Elo S.A. de C.V.
+              <a class="grey-text text-lighten-4 center" href="files/aviso.html">Aviso de privacidad</a>
+              <a class="grey-text text-lighten-4 center" href="files/terminos.html">Términos y condiciones</a>
+              </div>
+  </div>
+  </footer>
+   <!--SCRIPTS-->
+      <script src="js/jquery-3.3.1.min.js"></script>
+      <script src="js/materialize.min.js"></script>
+      <script src="js/main.js"></script>
+      <script>
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+        $(".dropdown-trigger").dropdown();
+        $(document).ready(function(){
+    $('.modal').modal();
+  });
+      </script>
+   <!--SCRIPTS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>

@@ -1,8 +1,34 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+* {
+    font-family: 'Montserrat', sans-serif;
 }
 
-a {
-  color: #00B7FF;
+button:focus {
+    outline: 0;
+}
+
+a:focus {
+    outline: 0;
+}
+
+.colorTextMenu {
+    color: black;
+}
+
+#categorias a {
+    color: black;
+}
+
+#busqueda {
+    margin: 0px;
+    width: 100%;
+    height: 80vh;
+    background-image: url("../img/ecommerce.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.search {
+    width: 50%;
+    margin: 20% 25%;
+    padding: 16px;
 }
