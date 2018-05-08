@@ -161,7 +161,7 @@ router.post('/signup', (req, res) => {
             </body>
             
             </html>`
-            
+
         };
         transporter.sendMail(message);
         return res.redirect('/verification');
@@ -224,7 +224,10 @@ router.get('/login', isAuthenticated, (req, res) => {
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/',
-    failureRedirect: '/unauthorized'
+    failureRedirect: '/login',
+    //esto?
+    failureFlash: true,
+    passReqToCallback: true
 }));
 
 ///////////////////////////LOG OUT/////////////////////////////////////
@@ -232,6 +235,20 @@ router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/login');
 });
+
+
+///////////////////////////LOGIN CON GOOGLE/////////////////////////////////////
+router.get("/google-login", passport.authenticate("google", {
+    scope: ["https://www.googleapis.com/auth/plus.login",
+        "https://www.googleapis.com/auth/plus.profile.emails.read"
+    ]
+}));
+
+router.get("/auth/google/callback", passport.authenticate("google", {
+    failureRedirect: "/login",
+    successRedirect: "/privada"
+}));
+
 
 ///////////////////////////SUBIR FOTO DE PERFIL/////////////////////////////////////
 router.post('/profile', uploads.single('profilePic'), (req, res, next) => {
