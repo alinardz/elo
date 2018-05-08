@@ -15,11 +15,6 @@ const userSchema = new Schema({
         enum: ["ADMIN", "USER"],
         default: "USER"
     },
-    status: {
-        type: String,
-        enum: ["Pending Confirmation", "Active"],
-        default: "Pending Confirmation"
-    },
     confirmationCode: String,
     products: [{
         type: Schema.Types.ObjectId,
