@@ -6,29 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Elo</title>
   <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="" type="image/x-icon"/>
 </head>
 <body>
-
-  <ul id="cat" class="dropdown-content">
-    <li><a href="#!">Tecnología</a></li>
-    <li><a href="#!">Vehículos</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Herramientas</a></li>
-  </ul>
   <div class="navbar-fixed">
   <nav>
       <div class="nav-wrapper blue">
-        <a href="#!" class="brand-logo center">ELO</a>
+        <a href="#!" class="brand-logo center" id="logo">ELO</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="left hide-on-med-and-down">
-          <li><a class="dropdown-trigger" href="#!" data-target="cat">Categorías<i class="material-icons right">arrow_drop_down</i></a></li>
+        <ul class="left hide-on-med-and-down over">
+          <li class="categorias size" id="cat">Categorías<i class="material-icons right">arrow_drop_down</i></li>
+          <ul class="none" id="lista">
+            <li class="divi"></li> 
+            <li><a href="#" class="size">Tecnología</a>
+            <ul></ul>
+            </li>
+            <br>
+            <li class="divi"></li>          
+            <a href="#" class="size"><li>Vehículos</li></a>
+            <li class="divi"></li>
+            <a href="#" class="size"><li>Ropa y accesorios</li></a>
+            <li class="divi"></li>
+            <a href="#" class="size"><li>Algo</li></a>
+            <li class="divi"></li> 
+          </ul>
         </ul>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#">Registrarse</a></li>
-          <li><a href="#">Acceder</a></li>
+          <li><a class="modal-trigger size" href="#modal1">Crear cuenta</a></li>
+          <li><a class="modal-trigger size" href="#login">Acceder</a></li>
         </ul>
       </div>
     </nav>
@@ -36,10 +47,65 @@
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#">Registrarse</a></li>
     <li><a href="#">Acceder</a></li>
-    <li><a href="#">Javascript</a></li>
-    <li><a href="#">Mobile</a></li>
+    <li><a href="#">Ayuda</a></li>
+    <li><a href="#">Contacto</a></li>
   </ul>
-
+   <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 class="center">Crear cuenta</h4>
+      <form action="/signup" method="post" class="input">
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" name="username" type="text" class="validate" required>
+          <label for="icon_prefix">Nombre</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">email</i>
+          <input id="icon_telephone" name="email" type="email" class="validate" required>
+          <label for="icon_telephone">Correo Electrónico</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">fingerprint</i>
+          <input id="icon_fingerprint1" name="password" type="password" class="validate" required>
+          <label for="icon_fingerprint1">Contraseña</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">fingerprint</i>
+          <input id="icon_fingerprint" name="password2" type="password" class="validate" required>
+          <label for="icon_fingerprint">Repetir contraseña</label>
+        </div>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">phone</i>
+          <input id="icon_emaila" type="number" class="validate" required>
+          <label for="icon_emaila">Teléfono</label>
+        </div>
+        <div class="center">
+          <input type="submit" class="boton"value="Crear cuenta">
+        </div>
+      </form>
+    </div>
+  </div>
+  <div id="login" class="modal">
+    <div class="modal-content">
+      <h4 class="center">Acceder</h4>
+      <form>
+        <div class="input-field col s6">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix1" name="username" type="text" class="validate" required>
+          <label for="icon_prefix1">Nombre</label>
+        </div>
+      <div class="input-field col s6">
+          <i class="material-icons prefix">fingerprint</i>
+          <input id="icon_fingerprint3" name="password" type="password" class="validate" required>
+          <label for="icon_fingerprint3">Contraseña</label>
+        </div>
+        <div class="center">
+          <input type="submit" value="Acceder">
+        </div>
+      </form>
+    </div>
+  </div>
 
   
   {{{body}}}
@@ -78,16 +144,22 @@
   <!--SCRIPTS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
 
+  
   <script>
     $(document).ready(function(){
     $('.sidenav').sidenav();
+    $('.modal').modal();
   });
   $(".dropdown-trigger").dropdown();
-        
+   
   </script>
+  <script src="/javascripts/script.js"></script>
 </body>
 </html>
+
+
+
 
 
