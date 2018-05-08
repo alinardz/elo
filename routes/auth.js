@@ -59,6 +59,9 @@ router.post('/login',
 router.get('/signup', (req, res) => {
     res.render('auth/signup', { error: req.body.error });
 });
+router.get('/profile', (req, res) => {
+    res.render('auth/profile', { error: req.body.error });
+});
 
 router.post('/signup',
     (req, res) => {

@@ -152,3 +152,11 @@ footer{
     color: #2196f3 !important;
   }
        
+
+
+  .card:hover{
+    background-color: #90caf9;
+
+  }
+
+ 
