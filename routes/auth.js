@@ -4,8 +4,6 @@ const User = require("../models/User");
 const multer = require("multer");
 const uploads = multer({ dest: './public/uploads' });
 
-
-//mailing
 const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
     service: "Gmail",
@@ -22,8 +20,13 @@ router.get('/signup', (req, res) => {
 
 //crear usuario y enviar correo
 router.post('/signup', (req, res) => {
+    if (req.body.password !== req.body.password2) {
+        return res.render("auth/signup", { info: "Las contraseñas no coinciden :(" })
+    }
     User.register(new User({ email: req.body.email }), req.body.password, function(err, account) {
-        if (err) { return res.render("index" /*, { info: "Sorry. That username already exists. Try again." }*/ ); }
+        if (err) {
+            return res.render("auth/signup", { info: "Ese correo ya está registrado :(" });
+        }
         const authenticate = User.authenticate();
 
         let message = {
@@ -33,17 +36,17 @@ router.post('/signup', (req, res) => {
             html: `<a href="http://localhost:3000/confirm/${account.authToken}">Hey-yo, confirma again :* </a>`
         };
         transporter.sendMail(message);
-        res.redirect('/');
+        res.render('/auth/verification');
         authenticate(req.body.email, req.body.password, function(err, result) {
             if (err) return res.send(err);
-            return res.render('/profile');
+            return res.redirect('/');
         });
     });
 });
 
 //link de confirmación
 router.get('/confirm/:authToken', function(req, res) {
-    User.findOneAndUpdate({ authToken: req.params.authToken }, { $set: { status: "Active" } })
+    User.findOneAndUpdate({ authToken: req.params.authToken }, { $set: { isAuthenticated: "True" } })
         .then(() => res.redirect("/"))
         .catch(e => console.log(e))
 });
@@ -54,17 +57,6 @@ router.get('/email-verification', (req, res) => {
 });
 
 ///////////////////////////LOGIN/////////////////////////////////////
-
-router.get('/profile', isNotAuth, (req, res, next) => {
-    User.findById(req.user._id)
-        //.populate('products')
-        .then(user => {
-            res.render('auth/profile', user);
-        })
-        .catch(e => next(e))
-
-});
-
 function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return res.redirect('/profile')
@@ -79,13 +71,31 @@ function isNotAuth(req, res, next) {
     return res.redirect('/login');
 };
 
+
+router.get('/profile', isNotAuth, (req, res, next) => {
+    User.findById(req.user._id)
+        //.populate('products')
+        .then(user => {
+            res.render('auth/profile', user);
+        })
+        .catch(e => next(e))
+
+});
+
+
+
 router.get('/login', isAuthenticated, (req, res) => {
     res.render('auth/login', { error: req.body.error });
 });
 
-router.post('/login', passport.authenticate('local'), (req, res) => {
-    res.redirect('/profile');
-});
+// router.post('/login', passport.authenticate('local'), (req, res) => {
+//     res.redirect('/profile');
+// });
+
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/unauthorized'
+}));
 
 ///////////////////////////LOG OUT/////////////////////////////////////
 router.get('/logout', (req, res) => {
