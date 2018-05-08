@@ -1,4 +1,4 @@
-* {
+/* * {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -33,4 +33,195 @@ a{
     width: 50%;
     margin: 20% 25%;
     padding: 16px;
+}
+
+ */
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+button:focus {
+    outline: 0;
+}
+
+a:focus {
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.colorTextMenu {
+    color: black;
+}
+
+#categorias a {
+    color: black;
+}
+
+#busqueda {
+    margin: 0px;
+    width: 100%;
+    height: 80vh;
+    background-image: url("../img/ecommerce.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.search {
+    width: 50%;
+    margin: 20% 25%;
+    padding: 16px;
+}
+
+
+/*# sourceMappingURL=style.css.map */
+
+#main {
+    background-image: url(../images/wall.jpeg);
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+}
+
+.over:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.none {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.divi {
+    width: 100%;
+    height: 1px;
+    background-color: white;
+}
+
+.size {
+    font-size: 1.3em;
+}
+
+.boton {
+    color: white;
+    padding: 16px;
+    font-size: 1.2em;
+    border: none;
+    background-color: #2196f3;
+}
+
+#logo {
+    font-family: 'Lobster', cursive;
+}
+
+input:focus {
+    border-color: #2196f3 !important;
+}
+
+#lista li:hover {
+    background-color: blue;
+}
+
+#categories {
+    background-color: #e0e0e0;
+    margin: 0px;
+}
+
+footer {
+    margin: 0;
+}
+
+.four {}
+
+.four:hover {
+    color: white;
+    background-color: #2196f3;
+}
+
+.medio {
+    position: absolute;
+    vertical-align: center;
+}
+
+#text {
+    color: white;
+    font-size: 3em;
+    position: absolute;
+}
+
+
+/* label color */
+
+.input-field label {
+    color: #000;
+}
+
+
+/* label focus color */
+
+.input-field input[type=text]:focus+label {
+    color: #2196f3 !important;
+}
+
+.input-field input[type=password]:focus+label {
+    color: #2196f3 !important;
+}
+
+.input-field input[type=email]:focus+label {
+    color: #2196f3 !important;
+}
+
+.input-field input[type=number]:focus+label {
+    color: #2196f3 !important;
+}
+
+
+/* label underline focus color */
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000;
+    color: #000;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+
+/* valid color */
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    color: #2196f3 !important;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+.input-field input[type=password].valid {
+    border-bottom: 1px solid #000;
+    color: #2196f3 !important;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+
+/* invalid color */
+
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    color: #2196f3 !important;
+    box-shadow: 0 1px 0 0 #000;
+}
+
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: #2196f3 !important;
+}
+
+.card:hover {
+    background-color: #90caf9;
 }
