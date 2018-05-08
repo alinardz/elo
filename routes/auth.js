@@ -209,7 +209,6 @@ router.get('/profile', isNotAuth, (req, res, next) => {
             res.render('auth/profile', user);
         })
         .catch(e => next(e))
-
 });
 
 
