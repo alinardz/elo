@@ -4,6 +4,10 @@
 button:focus {
   outline: 0; }
 
+.renta {
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.5); }
+
 a:focus {
   outline: 0; }
 
@@ -61,14 +65,11 @@ a {
   border: none;
   background-color: #2196f3; }
 
-#logo {
+.logo {
   font-family: 'Lobster', cursive; }
 
 input:focus {
   border-color: #2196f3 !important; }
-
-#lista li:hover {
-  background-color: blue; }
 
 #categories {
   background-color: #e0e0e0;
@@ -78,17 +79,11 @@ footer {
   margin: 0; }
 
 .four:hover {
-  color: white;
-  background-color: #2196f3; }
-
-.medio {
-  position: absolute;
-  vertical-align: center; }
+  color: white; }
 
 #text {
   color: white;
-  font-size: 3em;
-  position: absolute; }
+  font-size: 3em; }
 
 /* label color */
 .input-field label {
@@ -133,8 +128,5 @@ footer {
 /* icon prefix focus color */
 .input-field .prefix.active {
   color: #2196f3 !important; }
-
-.card:hover {
-  background-color: #90caf9; }
 
 /*# sourceMappingURL=style.css.map */

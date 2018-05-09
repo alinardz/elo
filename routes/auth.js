@@ -16,6 +16,14 @@ let transporter = nodemailer.createTransport({
     }
 });
 
+router.get('/tecnologia', (req, res) => {
+    res.render('auth/tecnologia', { error: req.body.error });
+});
+
+router.get('/vehiculos', (req, res) => {
+    res.render('auth/vehiculos', { error: req.body.error });
+});
+
 ///////////////////////////SIGN UP & CONFIRMATION/////////////////////////////////////
 router.get('/signup', (req, res) => {
     res.render('auth/signup', { error: req.body.error });
@@ -223,11 +231,11 @@ router.get('/login', isAuthenticated, (req, res) => {
 // });
 
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/profile',
     failureRedirect: '/login',
     //esto?
-    failureFlash: true,
-    passReqToCallback: true
+    //failureFlash: true,
+    //passReqToCallback: true
 }));
 
 ///////////////////////////LOG OUT/////////////////////////////////////

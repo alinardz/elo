@@ -6,6 +6,11 @@ button:focus {
     outline: 0;
 }
 
+.renta {
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 a:focus {
     outline: 0;
 }
@@ -78,16 +83,12 @@ a {
     background-color: #2196f3;
 }
 
-#logo {
+.logo {
     font-family: 'Lobster', cursive;
 }
 
 input:focus {
     border-color: #2196f3 !important;
-}
-
-#lista li:hover {
-    background-color: blue;
 }
 
 #categories {
@@ -99,22 +100,13 @@ footer {
     margin: 0;
 }
 
-.four {}
-
 .four:hover {
     color: white;
-    background-color: #2196f3;
-}
-
-.medio {
-    position: absolute;
-    vertical-align: center;
 }
 
 #text {
     color: white;
     font-size: 3em;
-    position: absolute;
 }
 
 
@@ -181,8 +173,4 @@ footer {
 
 .input-field .prefix.active {
     color: #2196f3 !important;
-}
-
-.card:hover {
-    background-color: #90caf9;
 }
