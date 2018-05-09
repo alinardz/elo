@@ -1,123 +1,133 @@
-<section>
-    <article class="portada">
-
-        {{#if profilePic}}
-        <img id="profilePic" src="{{profilePic}}" alt="">
-        {{else}}
-        <img id="profilePic" src="https://pbs.twimg.com/profile_images/719587633353986048/U6ub_oiK_400x400.jpg" alt="">
-        {{/if}}
-        <h2>{{username}}</h2>
-    </article>
-    {{#if message}}<h1>{{message}}</h1>{{/if}}
-    <article class="datos">
-        <form action="/profile" method="post" enctype="multipart/form-data">
-            <input class="form-control" value="{{username}}" type="text" name="username" placeholder="tu username"/>
-            <input class="form-control" value="{{email}}" type="email" name="email" placeholder="tu mail"/>
-            <textarea class="form-control" maxlength="10" name="bio" type="text">{{bio}}</textarea>
-            <input  id="file" type="file" name="profilePic" hidden/>
-            <input class="btn btn-success" type="submit" value="Guardar">
-        </form>
-
-    </article>
-
-</section>
-<section class="datos">
-
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tus productos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Tus compras</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Tus contactos</a>
-  </li>
-</ul>
-<div class="tab-content" id="myTabContent">
-  <div style="display:flex;flex-wrap:wrap" class="micontainer tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-
+<div id="principal">
+<div class="center">
+  <img src="images/categories/alina.jpg" class="profile circle">
+</div>
+   <ul id="tabs-swipe-demo" class="tabs center">
+    <li class="tab col s12 m4 l4"><a class="active" href="#test-swipe-1">Mis Productos</a></li>
+    <li class="tab col s12 m4 l4"><a href="#test-swipe-2">Historial</a></li>
+    <li class="tab col s12 m4 l4"><a href="#test-swipe-3">SubAppi</a></li>
+  </ul>
+  <div id="test-swipe-1" class="col s12">
+    <div class="container">
+    <div class="row">
+    <div class="col s12 m4 l3">
+      <div class="card">
+        <a href="#">
+        <div class="card-image">
+          <img class="resizeimg" src="images/categories/rio.png">
+        </div>
+        <div class="card-content">
+          <p class="center">Kia rio 2018</p>
+          <p class="center">CDMX</p>
+          <p class="center">$450 por dia</p>
+          <p class="center">Disponible</p>
+        </div>
+        </a>
+      </div>
+      </div>
+      <div class="col s12 m4 l3">
+      <div class="card">
+        <a href="#">
+        <div class="card-image">
+          <img src="images/categories/camara.png" class="resizeimg">
+        </div>
+        <div class="card-content">
+          <p class="center">Camara canon T5</p>
+          <p class="center">CDMX</p>
+          <p class="center">$250 por dia</p>
+          <p class="center">Disponible</p>
+        </div>
+        </a>
+      </div>
+      </div>
+      <div class="col s12 m4 l3">
+      <div class="card">
+        <a href="#">
+        <div class="card-image">
+          <img src="images/categories/proyector.png" height="450">
+        </div>
+        <div class="card-content">
+          <p class="center">Kia rio 2018</p>
+          <p class="center">CDMX</p>
+          <p class="center">$450 por dia</p>
+          <p class="center">Disponible</p>
+        </div>
+        </a>
+      </div>
+      </div>
       
-      <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Agregar producto
-        </button>      
-
-{{#each products}}
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="{{this.photos.[0]}}" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">{{this.name}}</h5>
-            <p class="card-text">{{this.desc}}</p>
-            <a href="#" class="btn btn-primary">{{this.price}}</a>
-        </div>
-        </div>
-{{/each}}
-
-
-
-
 
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-</div>
+  </div>
 
-</section>
+  </div>
+  <div id="test-swipe-2" class="col s12">
+    
+    <div class="container">
+      <table>
+        <thead>
+          <tr>
+              <th>Productos</th>
+              <th># Rentas</th>
+              <th>Precio</th>
+              <th>Total</th>
+          </tr>
+        </thead>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nuevo produto</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        
-        <form action="/products/new" method="post" enctype="multipart/form-data">
-            <input class="form-control" type="text" placeholder="Nombre de tu producto" name="name" />
-            <br>
-            <input class="form-control" name="price" type="number" placeholder="el precio"/>
-            <br>
-            <label>Descripcion:</label>
-            <textarea class="form-control" name="desc" cols="30" rows="5"></textarea>
-            <br>
-            <label>Sube hasta 6 imagenes</label>
-            <input name="photos" class="form-control form-control-file" type="file" multiple />
-            <input type="submit" class="btn btn-primary">
-        </form>
-        
-
-      </div>
-      <div class="modal-footer">
-          by bliss
-      </div>
+        <tbody>
+          <tr>
+            <td>Auto Kia</td>
+            <td>5</td>
+            <td>$450 por dia</td>
+            <td>$2,250</td>
+          </tr>
+          <tr>
+            <td>Camara canon t5</td>
+            <td>6</td>
+            <td>$250 por dia</td>
+            <td>$1,500</td>
+          </tr>
+          <tr>
+            <td>Proyector</td>
+            <td>10</td>
+            <td>$250 por dia</td>
+            <td>$2,500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div id="test-swipe-3" class="col s12">
+    <div class="container">
+      <h3 class="center">¿Ya no quieres tus productos?</h3>
+      <p class="center">Subastalos en Subappi</p>
     </div>
   </div>
 </div>
+<style>
+  #principal{
+    margin-top: 2%;
+  }
+  .profile{
+    width: 250px;
+    height: 250px;
+  }
 
+@media (max-width: 990px) {
+  .resizeimg {
+    height: auto;
+  }
+}
 
+@media (min-width: 1000px) {
+  .resizeimg {
+    width: auto;
+    height: 350;
+  }
+}
 
+.card img{
+  max-height: 150px;
+}
 
-<script>
-    document.querySelector('#profilePic')
-        .addEventListener('click', ()=>{
-            document.querySelector('#file').click();
-        })
-</script>
+</style>
