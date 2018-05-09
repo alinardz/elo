@@ -55,6 +55,18 @@
     <div class="modal-content">
       <h4 class="center">Crear cuenta</h4>
       <form action="/signup" method="post" class="input">
+      <div class="row">
+        <div class="col s12 m6 l6">
+          <a href="/auth/facebook"><img class="responsive-img" height="40px" src="https://www.k12paymentcenter.com/Images/SignUpFB.png"></a></div>
+        <div class="col s12 m6 l6 center">
+          {{#unless user}}
+              <div>
+              <a href="/auth/google"><img class="responsive-img" height="40px" src="https://lastinch.in/wp-content/uploads/2017/06/signup-google.png"></a>
+              </div>
+          {{/unless}}
+        </div> 
+      </div> 
+
         <div class="input-field col s6">
           <i class="material-icons prefix">account_circle</i>
           <input id="icon_prefix" name="username" type="text" class="validate" required>

@@ -5,6 +5,7 @@ const multer = require("multer");
 const uploads = multer({ dest: './public/uploads' });
 
 
+
 //mailing
 const nodemailer = require("nodemailer");
 let transporter = nodemailer.createTransport({
@@ -236,18 +237,31 @@ router.get('/logout', (req, res) => {
 });
 
 
+/////////////////LOGIN CON FACEBOOK///////////////////
+router.get("/auth/facebook", passport.authenticate("facebook"));
+router.get("/auth/facebook/callback", passport.authenticate("facebook", {
+    successRedirect: "/",
+    failureRedirect: "/"
+}));
+
 ///////////////////////////LOGIN CON GOOGLE/////////////////////////////////////
-router.get("/google-login", passport.authenticate("google", {
+router.get("/auth/google", passport.authenticate("google", {
     scope: ["https://www.googleapis.com/auth/plus.login",
         "https://www.googleapis.com/auth/plus.profile.emails.read"
     ]
 }));
 
 router.get("/auth/google/callback", passport.authenticate("google", {
-    failureRedirect: "/login",
+    failureRedirect: "/",
     successRedirect: "/privada"
 }));
 
+router.get("/privada", (req, res) => {
+    if (req.user) {
+        return res.send("tienes permiso " + req.user.email);
+    }
+    res.send("no tienes permiso");
+})
 
 ///////////////////////////SUBIR FOTO DE PERFIL/////////////////////////////////////
 router.post('/profile', uploads.single('profilePic'), (req, res, next) => {
