@@ -12,6 +12,10 @@ const userSchema = new Schema({
         type: String,
         required: false
     },
+    location: {
+        type: { type: String },
+        coordinates: [Number]
+    },
     role: {
         type: String,
         enum: ["ADMIN", "USER"],
@@ -20,7 +24,8 @@ const userSchema = new Schema({
     confirmationCode: String,
     products: [{
         type: Schema.Types.ObjectId,
-        ref: "Product"
+        ref: "Product",
+        _id: Schema.Types.ObjectId
     }]
 }, {
     timeStamps: {

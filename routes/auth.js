@@ -215,7 +215,7 @@ function isNotAuth(req, res, next) {
 
 router.get('/profile', isNotAuth, (req, res, next) => {
     User.findById(req.user._id)
-        //.populate('products')
+        .populate('products')
         .then(user => {
             res.render('auth/profile', user);
         })

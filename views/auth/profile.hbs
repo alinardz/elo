@@ -3,33 +3,66 @@
   <img src="images/categories/alina.jpg" class="profile circle">
 </div>
 
-<div class="nuevo">
-  <button><a href="/nuevo" class="size">Agregar Nuevo Producto</a></button>
-</div>
-
-   <ul id="tabs-swipe-demo" class="tabs center">
+  <ul id="tabs-swipe-demo" class="tabs center">
     <li class="tab col s12 m4 l4"><a class="active" href="#test-swipe-1">Mis Productos</a></li>
     <li class="tab col s12 m4 l4"><a href="#test-swipe-2">Historial</a></li>
     <li class="tab col s12 m4 l4"><a href="#test-swipe-3">SubAppi</a></li>
   </ul>
+
+<div class="nuevo">
+  <button><a href="/nuevo" class="size">Agregar Nuevo Producto</a></button>
+</div>
+
+
+
+<div id="test-swipe-1" class="col s12">
+  <div class="container">
+    <div class="row">
+{{#each products}}
+      <div class="col s12 m4 l3">
+        <div class="card">
+          <a href="#">
+            <div class="card-image">
+              <img class="resizeimg" src="{{this.photos.[0]}}" alt="Card image cap">
+            </div>
+            <div class="card-content">
+              <p class="center">{{this.name}}</p>
+              <p class="center">{{this.desc}}</p>
+              <p class="center">Ubicación</p>
+              <p class="center">{{this.price}}</p>
+              <p class="center">Disponible</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+{{/each}}
+    </div>
+  </div>
+</div>
+
+  <h4>Hardcodeo</h4>
   <div id="test-swipe-1" class="col s12">
     <div class="container">
     <div class="row">
-    <div class="col s12 m4 l3">
-      <div class="card">
-        <a href="#">
-        <div class="card-image">
-          <img class="resizeimg" src="images/categories/rio.png">
+
+      <div class="col s12 m4 l3">
+        <div class="card">
+          <a href="#">
+            <div class="card-image">
+              <img class="resizeimg" src="images/categories/rio.png">
+            </div>
+            <div class="card-content">
+              <p class="center">Kia rio 2018</p>
+              <p class="center">CDMX</p>
+              <p class="center">$450 por dia</p>
+              <p class="center">Disponible</p>
+            </div>
+          </a>
         </div>
-        <div class="card-content">
-          <p class="center">Kia rio 2018</p>
-          <p class="center">CDMX</p>
-          <p class="center">$450 por dia</p>
-          <p class="center">Disponible</p>
-        </div>
-        </a>
       </div>
-      </div>
+
       <div class="col s12 m4 l3">
       <div class="card">
         <a href="#">

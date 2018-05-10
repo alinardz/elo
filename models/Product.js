@@ -11,6 +11,10 @@ const productSchema = new Schema({
     price: String,
     stock: Number,
     photos: [String],
+    location: {
+        type: { type: String },
+        coordinates: [Number]
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref: "User"
