@@ -72,7 +72,7 @@ const auth = require('./routes/auth');
 const products = require('./routes/products');
 app.use('/', index);
 app.use('/', auth);
-app.use('/products', products);
+app.use('/', products);
 
 
 module.exports = app;

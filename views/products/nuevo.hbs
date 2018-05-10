@@ -1,0 +1,19 @@
+  <h1>Nuevo</h1>
+  <form action="/nuevo" method="post" enctype="multipart/form-data">
+    <label>Nombre del producto</label>
+    <input type="text" name="name">
+    <br>
+    <label>Descripción de tu producto</label>
+    <textarea name="desc" type="text"></textarea>
+    <br>
+    <label>Precio de tu producto</label>
+    <input type="number" name="price">
+    <br>
+    <label>Stock</label>
+    <input maxlength= "2" type="number" name="stock">
+    <br>
+    <label>Galería de fotos</label>
+    <input multiple type="file" name="photos">
+    <br>
+    <input type="submit">
+  </form>

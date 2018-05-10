@@ -7,8 +7,9 @@ const productSchema = new Schema({
         default: false
     },
     name: String,
-    desc: String,
+    description: String,
     price: String,
+    stock: Number,
     photos: [String],
     user: {
         type: Schema.Types.ObjectId,
@@ -24,3 +25,5 @@ const productSchema = new Schema({
         updatedAt: "updated_at"
     }
 });
+
+module.exports = mongoose.model("Product", productSchema);
