@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
 * {
   font-family: 'Montserrat', sans-serif; }
 
@@ -5,8 +7,7 @@ button:focus {
   outline: 0; }
 
 .renta {
-  padding: 16px;
-  background-color: rgba(0, 0, 0, 0.5); }
+  padding: 10vh 30px; }
 
 a:focus {
   outline: 0; }
@@ -21,14 +22,6 @@ a {
 #categorias a {
   color: black; }
 
-#busqueda {
-  margin: 0px;
-  width: 100%;
-  height: 80vh;
-  background-image: url("../img/ecommerce.jpg");
-  background-size: cover;
-  background-repeat: no-repeat; }
-
 .search {
   width: 50%;
   margin: 20% 25%;
@@ -36,10 +29,12 @@ a {
 
 /*# sourceMappingURL=style.css.map */
 #main {
-  background-image: url(../images/wall.jpeg);
+  background-image: url(../images/portada.jpg);
   width: 100%;
-  height: 55vh;
-  background-size: cover; }
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -30vh; }
 
 .over:hover {
   background-color: rgba(0, 0, 0, 0.5); }
@@ -65,8 +60,10 @@ a {
   border: none;
   background-color: #2196f3; }
 
-.logo {
-  font-family: 'Lobster', cursive; }
+#logo {
+  font-family: 'Lobster', cursive;
+  height: 45px;
+  margin: 10px; }
 
 input:focus {
   border-color: #2196f3 !important; }
@@ -131,5 +128,125 @@ footer {
 
 .card-content:hover {
   background-color: #2196f3; }
+
+#cat {
+  padding-left: 20px; }
+
+* {
+  box-sizing: border-box; }
+
+form {
+  margin: 30px auto 110px; }
+
+.search_bar {
+  background: #fff;
+  border: #b7b7b7 solid 1px;
+  border-radius: 3px;
+  box-shadow: 0 0 3px #ccc;
+  position: relative;
+  font-family: 'Source Sans Pro', sans-serif;
+  max-width: 420px; }
+  .search_bar input[type=text] {
+    border: none;
+    box-shadow: none;
+    font-weight: 600;
+    font-size: 14px;
+    width: 80%;
+    padding: .5em;
+    margin: 0;
+    overflow: hidden; }
+    .search_bar input[type=text]:focus {
+      outline: none; }
+  .search_bar button[type=submit] {
+    background: linear-gradient(#237cd4, #1e6ab5);
+    color: rgba(255, 255, 255, 0);
+    border: 1px solid #1C62A8;
+    width: 10%;
+    min-width: 56px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    border-radius: 0 3px 3px 0;
+    margin: 0;
+    user-select: none; }
+    .search_bar button[type=submit]:after {
+      content: '';
+      position: absolute;
+      top: 18%;
+      right: 0;
+      bottom: 22%;
+      left: 4%;
+      background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
+      background-size: contain; }
+    .search_bar button[type=submit]:hover, .search_bar button[type=submit]:focus {
+      background: linear-gradient(#3388dd, #2174c7);
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+      cursor: pointer; }
+  .search_bar .search_dropdown {
+    font-weight: 600;
+    min-width: 17px;
+    background: linear-gradient(#f4f4f4, #e2e2e2);
+    border-right: 1px solid #ddd;
+    color: #555;
+    padding: 0 100px 0 13px;
+    border-radius: 2px 0 0 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 10000;
+    user-select: none;
+    box-sizing: content-box; }
+    .search_bar .search_dropdown:after {
+      content: "\2193";
+      color: rgba(85, 85, 85, 0);
+      background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+      height: 8px;
+      width: 10px;
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      margin-top: -6px; }
+    .search_bar .search_dropdown:hover, .search_bar .search_dropdown.active {
+      background: linear-gradient(#e7e7e7, #d5d5d5);
+      cursor: pointer;
+      border-right-color: #ccc; }
+    .search_bar .search_dropdown > span {
+      position: absolute;
+      top: 50%;
+      margin-top: -8px;
+      white-space: nowrap;
+      font-size: 15px; }
+    .search_bar .search_dropdown ul {
+      display: none;
+      position: absolute;
+      top: 105%;
+      left: -1px;
+      font-size: 14px;
+      width: 225px;
+      background: #fff;
+      box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      padding: 7px 0; }
+    .search_bar .search_dropdown li {
+      list-style-type: none;
+      margin: 0;
+      padding: 5px 18px;
+      color: #1C62A8;
+      line-height: 1.2em;
+      position: relative; }
+      .search_bar .search_dropdown li:hover {
+        background: #e7e7e7; }
+      .search_bar .search_dropdown li.selected {
+        background: #1C62A8;
+        color: #fff; }
+  .search_bar.large {
+    max-width: 560px; }
+    .search_bar.large input[type=text] {
+      font-size: 16px; }
+  .search_bar ::placeholder {
+    font-weight: 400; }
 
 /*# sourceMappingURL=style.css.map */

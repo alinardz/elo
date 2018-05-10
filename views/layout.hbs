@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <title>Elo</title>
-  <!-- Compiled and minified CSS -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="" type="image/x-icon"/>
 </head>
+
 <body>
-  <div class="navbar-fixed ">
-  <nav class="blue">
+
+  {{!-- NAV BAR --}}
+<div class="navbar-fixed ">
+  <nav class="black">
       <div class="nav-wrapper">
-        <a href="/" class="brand-logo center" class="logo">Elo</a>
+        <a href="/" class="brand-logo center" class="logo"><img src="/images/logo.png" id="logo"></a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="left hide-on-med-and-down over">
           <li class="categorias size" id="cat">Categorías<i class="material-icons right">arrow_drop_down</i></li>
@@ -27,17 +30,13 @@
             <ul></ul>
             </li>
             <br>
-            <li class="divi"></li>          
+                
             <a href="/vehiculos" class="size"><li>Vehículos</li></a>
-            <li class="divi"></li>
             <a href="#" class="size"><li>Ropa y accesorios</li></a>
-            <li class="divi"></li>
             <a href="#" class="size"><li>Inmuebles</li></a>
-            <li class="divi"></li> 
             <a href="#" class="size"><li>Deportes</li></a>
-            <li class="divi"></li> 
             <a href="#" class="size"><li>Servicios</li></a>
-            <li class="divi"></li> 
+          
           </ul>
         </ul>
         <ul class="right hide-on-med-and-down">
@@ -47,13 +46,19 @@
       </div>
     </nav>
   </div>
+
+
+
+  {{!-- OPCIONES --}}
   <ul class="sidenav" id="mobile-demo">
     <li><a href="#">Registrarse</a></li>
     <li><a href="#">Acceder</a></li>
     <li><a href="#">Ayuda</a></li>
     <li><a href="#">Contacto</a></li>
   </ul>
-   <!-- Modal Structure -->
+
+
+  {{!-- MODAL CREAR CUENTA --}}
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4 class="center">Crear cuenta</h4>
@@ -101,6 +106,9 @@
       </form>
     </div>
   </div>
+
+
+  {{!-- MODAL ACCEDER --}}
   <div id="login" class="modal">
     <div class="modal-content">
       <h4 class="center">Acceder</h4>
@@ -126,9 +134,7 @@
   {{{body}}}
 
 
-
-
-
+    {{!-- FOOTER --}}
     <footer class="page-footer blue">
           <div class="container">
             <div class="row">
@@ -156,12 +162,12 @@
             </div>
           </div>
         </footer>
+
+
+
   <!--SCRIPTS-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
-  
   <script>
     $(document).ready(function(){
     $('.sidenav').sidenav();
@@ -171,5 +177,108 @@
   $('.tabs').tabs();
   </script>
   <script src="/javascripts/script.js"></script>
-</body>
+  
+  
+  <script>
+          var resizeElements;
+
+          $(document).ready(function() {
+
+            // Set up common variables
+            // --------------------------------------------------
+
+            var bar = ".search_bar";
+            var input = bar + " input[type='text']";
+            var button = bar + " button[type='submit']";
+            var dropdown = bar + " .search_dropdown";
+            var dropdownLabel = dropdown + " > span";
+            var dropdownList = dropdown + " ul";
+            var dropdownListItems = dropdownList + " li";
+
+
+            // Set up common functions
+            // --------------------------------------------------
+
+            resizeElements = function() {
+              var barWidth = $(bar).outerWidth();
+
+              var labelWidth = $(dropdownLabel).outerWidth();
+              $(dropdown).width(labelWidth);
+
+              var dropdownWidth = $(dropdown).outerWidth();
+              var buttonWidth	= $(button).outerWidth();
+              var inputWidth = barWidth - dropdownWidth - buttonWidth;
+              var inputWidthPercent = inputWidth / barWidth * 100 + "%";
+
+              $(input).css({ 'margin-left': dropdownWidth, 'width': inputWidthPercent });
+            }
+
+            function dropdownOn() {
+              $(dropdownList).fadeIn(25);
+              $(dropdown).addClass("active");
+            }
+
+            function dropdownOff() {
+              $(dropdownList).fadeOut(25);
+              $(dropdown).removeClass("active");
+            }
+
+
+            // Initialize initial resize of initial elements 
+            // --------------------------------------------------
+            resizeElements();
+
+
+            // Toggle new dropdown menu on click
+            // --------------------------------------------------
+
+            $(dropdown).click(function(event) {
+              if ($(dropdown).hasClass("active")) {
+                dropdownOff();
+              } else {
+                dropdownOn();
+              }
+
+              event.stopPropagation();
+              return false;
+            });
+
+            $("html").click(dropdownOff);
+
+
+            // Activate new dropdown option and show tray if applicable
+            // --------------------------------------------------
+
+            $(dropdownListItems).click(function() {
+              $(this).siblings("li.selected").removeClass("selected");
+              $(this).addClass("selected");
+
+              // Focus the input
+              $(this).parents("form.search_bar:first").find("input[type=text]").focus();
+
+              var labelText = $(this).text();
+              $(dropdownLabel).text(labelText);
+
+              resizeElements();
+
+            });
+
+
+            // Resize all elements when the window resizes
+            // --------------------------------------------------
+
+            $(window).resize(function() {
+              resizeElements();
+            });
+          });
+  </script>
+
+
+
+
+  
+
+  </body>
+
 </html>
+
