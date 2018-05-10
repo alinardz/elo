@@ -24,6 +24,8 @@ router.get('/vehiculos', (req, res) => {
     res.render('auth/vehiculos', { error: req.body.error });
 });
 
+
+
 ///////////////////////////SIGN UP & CONFIRMATION/////////////////////////////////////
 router.get('/signup', (req, res) => {
     res.render('auth/signup', { error: req.body.error });
@@ -196,7 +198,7 @@ router.get('/verification', (req, res) => {
 });
 
 ///////////////////////////LOGIN/////////////////////////////////////
-function isAuthenticated(req, res, next) {
+/* function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
         return res.redirect('/profile')
     }
@@ -208,7 +210,7 @@ function isNotAuth(req, res, next) {
         return next();
     }
     return res.redirect('/login');
-};
+}; */
 
 
 router.get('/profile', isNotAuth, (req, res, next) => {
@@ -220,15 +222,9 @@ router.get('/profile', isNotAuth, (req, res, next) => {
         .catch(e => next(e))
 });
 
-
-
 router.get('/login', isAuthenticated, (req, res) => {
     res.render('auth/login', { error: req.body.error });
 });
-
-// router.post('/login', passport.authenticate('local'), (req, res) => {
-//     res.redirect('/profile');
-// });
 
 router.post('/login', passport.authenticate('local', {
     successRedirect: '/profile',
@@ -243,7 +239,6 @@ router.get('/logout', (req, res) => {
     req.logout();
     res.redirect('/login');
 });
-
 
 /////////////////LOGIN CON FACEBOOK///////////////////
 router.get("/auth/facebook", passport.authenticate("facebook"));
@@ -270,6 +265,22 @@ router.get("/privada", (req, res) => {
     }
     res.send("no tienes permiso");
 })
+
+///////////////////////////CHECK IF USER IS AUTHENTICATED/////////////////////////////////////
+function isAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return res.redirect('/profile')
+    }
+    return next();
+}
+
+function isNotAuth(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    return res.redirect('/login');
+}
+
 
 ///////////////////////////SUBIR FOTO DE PERFIL/////////////////////////////////////
 router.post('/profile', uploads.single('profilePic'), (req, res, next) => {
