@@ -11,6 +11,7 @@ const productSchema = new Schema({
     price: String,
     stock: Number,
     photos: [String],
+    rents: Number,
     location: {
         type: { type: String },
         coordinates: [Number]

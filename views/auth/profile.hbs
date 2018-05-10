@@ -9,97 +9,47 @@
     <li class="tab col s12 m4 l4"><a href="#test-swipe-3">SubAppi</a></li>
   </ul>
 
-<div class="nuevo">
-  <button><a href="/nuevo" class="size">Agregar Nuevo Producto</a></button>
-</div>
-
 
 
 <div id="test-swipe-1" class="col s12">
   <div class="container">
     <div class="row">
-{{#each products}}
-      <div class="col s12 m4 l3">
-        <div class="card">
-          <a href="#">
-            <div class="card-image">
-              <img class="resizeimg" src="{{this.photos.[0]}}" alt="Card image cap">
+    {{#each products}}
+          <div class="col s12 m4 l3">
+            <div class="card">
+              <a href="#">
+                <div class="card-image">
+                  <img class="resizeimg" src="{{this.photos.[0]}}" alt="Card image cap">
+                </div>
+                <div class="card-content">
+                  <p class="center">{{this.name}}</p>
+                  <p class="center">{{this.desc}}</p>
+                  <p class="center">Ubicación</p>
+                  <p class="center">{{this.price}}</p>
+                  <p class="center">Disponible</p>
+                </div>
+              </a>
             </div>
-            <div class="card-content">
-              <p class="center">{{this.name}}</p>
-              <p class="center">{{this.desc}}</p>
-              <p class="center">Ubicación</p>
-              <p class="center">{{this.price}}</p>
-              <p class="center">Disponible</p>
-            </div>
-          </a>
-        </div>
-      </div>
+          </div>
+    {{/each}}
 
 
-{{/each}}
+        <a href="/nuevo" class="size">
+            <div class="centered">
+              <div class="plus" id="plus">
+                <div class="plus__line plus__line--v"></div>
+                <div class="plus__line plus__line--h"></div>
+              </div>
+            </div>
+        </a>
+
+
     </div>
   </div>
 </div>
 
-  <h4>Hardcodeo</h4>
-  <div id="test-swipe-1" class="col s12">
-    <div class="container">
-    <div class="row">
 
-      <div class="col s12 m4 l3">
-        <div class="card">
-          <a href="#">
-            <div class="card-image">
-              <img class="resizeimg" src="images/categories/rio.png">
-            </div>
-            <div class="card-content">
-              <p class="center">Kia rio 2018</p>
-              <p class="center">CDMX</p>
-              <p class="center">$450 por dia</p>
-              <p class="center">Disponible</p>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <div class="col s12 m4 l3">
-      <div class="card">
-        <a href="#">
-        <div class="card-image">
-          <img src="images/categories/camara.png" class="resizeimg">
-        </div>
-        <div class="card-content">
-          <p class="center">Camara canon T5</p>
-          <p class="center">CDMX</p>
-          <p class="center">$250 por dia</p>
-          <p class="center">Disponible</p>
-        </div>
-        </a>
-      </div>
-      </div>
-      <div class="col s12 m4 l3">
-      <div class="card">
-        <a href="#">
-        <div class="card-image">
-          <img src="images/categories/proyector.png" height="450">
-        </div>
-        <div class="card-content">
-          <p class="center">Kia rio 2018</p>
-          <p class="center">CDMX</p>
-          <p class="center">$450 por dia</p>
-          <p class="center">Disponible</p>
-        </div>
-        </a>
-      </div>
-      </div>
-      
-
-  </div>
-  </div>
-
-  </div>
-  <div id="test-swipe-2" class="col s12">
+<div id="test-swipe-2" class="col s12">
     
     <div class="container">
       <table>
@@ -113,24 +63,15 @@
         </thead>
 
         <tbody>
+
+          {{#each products}}
           <tr>
-            <td>Auto Kia</td>
-            <td>5</td>
-            <td>$450 por dia</td>
-            <td>$2,250</td>
+          <td>{{this.name}}</td>
+          <td>{{rents}}3*</td>
+          <td>{{this.price}}</td>
+          <td>$250*</td>            
           </tr>
-          <tr>
-            <td>Camara canon t5</td>
-            <td>6</td>
-            <td>$250 por dia</td>
-            <td>$1,500</td>
-          </tr>
-          <tr>
-            <td>Proyector</td>
-            <td>10</td>
-            <td>$250 por dia</td>
-            <td>$2,500</td>
-          </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
@@ -141,7 +82,10 @@
       <p class="center">Subastalos en Subappi</p>
     </div>
   </div>
-</div>
+
+
+
+
 <style>
   #principal{
     margin-top: 2%;
