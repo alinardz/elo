@@ -12,6 +12,11 @@ const productSchema = new Schema({
     stock: Number,
     photos: [String],
     rents: Number,
+    status: {
+        type: String,
+        enum: ["disponible", "no disponible"],
+        default: "disponible"
+    },
     location: {
         type: { type: String },
         coordinates: [Number]
