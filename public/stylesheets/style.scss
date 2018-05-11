@@ -1,531 +1,501 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-* {
-    font-family: 'Montserrat', sans-serif;
-}
-
-button:focus {
-    outline: 0;
-}
-
-.renta {
-    padding: 20vh 30px;
-}
-
-a:focus {
-    outline: 0;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.colorTextMenu {
-    color: black;
-}
-
-#categorias a {
-    color: black;
-}
-
-.search {
-    width: 50%;
-    margin: 20% 25%;
-    padding: 16px;
-}
-
-
-/*# sourceMappingURL=style.css.map */
-
-#main {
-    background-image: url(../images/portada.jpg);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position-y: -30vh;
-}
-
-
-/* .over:hover {
+    @import url('https://fonts.googleapis.com/css?family=Montserrat');
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    button:focus {
+        outline: 0;
+    }
+    
+    .renta {
+        padding: 20vh 30px;
+    }
+    
+    a:focus {
+        outline: 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .colorTextMenu {
+        color: black;
+    }
+    
+    #categorias a {
+        color: black;
+    }
+    
+    .search {
+        width: 50%;
+        margin: 20% 25%;
+        padding: 16px;
+    }
+    /*# sourceMappingURL=style.css.map */
+    
+    #main {
+        background-image: url(../images/portada.jpg);
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-y: -30vh;
+    }
+    /* .over:hover {
     background-color: rgba(0, 0, 0, 0.5);
 } */
-
-.none {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
-.divi {
-    width: 100%;
-    height: 1px;
-    background-color: white;
-}
-
-.size {
-    font-size: 1em;
-}
-
-.boton {
-    color: white;
-    padding: 16px;
-    font-size: 1.2em;
-    border: none;
-    background-color: #2196f3;
-}
-
-#logo {
-    font-family: 'Lobster', cursive;
-    height: 45px;
-    margin: 10px;
-}
-
-input:focus {
-    border-color: #2196f3 !important;
-}
-
-#categories {
-    background-color: #e0e0e0;
-    margin: 0px;
-}
-
-footer {
-    margin: 0;
-}
-
-.four:hover {
-    color: white;
-}
-
-#text {
-    color: white;
-    font-size: 6em;
-}
-
-
-/* label color */
-
-.input-field label {
-    color: #000;
-}
-
-
-/* label focus color */
-
-.input-field input[type=text]:focus+label {
-    color: #2196f3 !important;
-}
-
-.input-field input[type=password]:focus+label {
-    color: #2196f3 !important;
-}
-
-.input-field input[type=email]:focus+label {
-    color: #2196f3 !important;
-}
-
-.input-field input[type=number]:focus+label {
-    color: #2196f3 !important;
-}
-
-
-/* label underline focus color */
-
-.input-field input[type=text]:focus {
-    border-bottom: 1px solid #000;
-    color: #000;
-    box-shadow: 0 1px 0 0 #000;
-}
-
-
-/* valid color */
-
-.input-field input[type=text].valid {
-    border-bottom: 1px solid #000;
-    color: #2196f3 !important;
-    box-shadow: 0 1px 0 0 #000;
-}
-
-.input-field input[type=password].valid {
-    border-bottom: 1px solid #000;
-    color: #2196f3 !important;
-    box-shadow: 0 1px 0 0 #000;
-}
-
-
-/* invalid color */
-
-.input-field input[type=text].invalid {
-    border-bottom: 1px solid #000;
-    color: #2196f3 !important;
-    box-shadow: 0 1px 0 0 #000;
-}
-
-
-/* icon prefix focus color */
-
-.input-field .prefix.active {
-    color: #2196f3 !important;
-}
-
-.card-content:hover {
-    background-color: #2196f3;
-}
-
-#cat {
-    padding-left: 20px;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
-$shade_color: #e7e7e7;
-$highlight_color: #1C62A8;
-* {
-    box-sizing: border-box;
-}
-
-form {
-    margin: 30px auto 110px;
-}
-
-.search_bar {
-    background: #fff;
-    border: #b7b7b7 solid 1px;
-    border-radius: 3px;
-    box-shadow: 0 0 3px #ccc;
-    position: relative;
-    font-family: 'Source Sans Pro', sans-serif;
-    max-width: 420px;
-    input[type=text] {
+    
+    .none {
+        display: none;
+    }
+    
+    .show {
+        display: block;
+    }
+    
+    .divi {
+        width: 100%;
+        height: 1px;
+        background-color: white;
+    }
+    
+    .size {
+        font-size: 1em;
+    }
+    
+    .boton {
+        color: white;
+        padding: 16px;
+        font-size: 1.2em;
         border: none;
-        box-shadow: none;
-        font-weight: 600;
-        font-size: 14px;
-        width: 80%;
-        padding: .5em;
+        background-color: #2196f3;
+    }
+    
+    #logo {
+        font-family: 'Lobster', cursive;
+        height: 45px;
+        margin: 10px;
+    }
+    
+    input:focus {
+        border-color: #2196f3 !important;
+    }
+    
+    #categories {
+        background-color: #e0e0e0;
+        margin: 0px;
+    }
+    
+    footer {
         margin: 0;
-        overflow: hidden;
-        &:focus {
-            outline: none;
-        }
     }
-    button[type=submit] {
-        background: linear-gradient(lighten($highlight_color, 10%), lighten($highlight_color, 3%));
-        color: rgba(255, 255, 255, 0);
-        border: 1px solid $highlight-color;
-        width: 10%;
-        min-width: 56px;
-        position: absolute;
-        top: -1px;
-        right: -1px;
-        bottom: -1px;
-        border-radius: 0 3px 3px 0;
-        margin: 0;
-        user-select: none;
-        &:after {
-            content: '';
-            position: absolute;
-            top: 18%;
-            right: 0;
-            bottom: 22%;
-            left: 4%;
-            background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
-            background-size: contain;
-        }
-        &:hover,
-        &:focus {
-            background: linear-gradient(lighten($highlight_color, 15%), lighten($highlight_color, 7%));
-            box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-            cursor: pointer;
-        }
+    
+    .four:hover {
+        color: white;
     }
-    .search_dropdown {
-        font-weight: 600;
-        min-width: 17px;
-        background: linear-gradient(lighten($shade_color, 5%), darken($shade_color, 2%));
-        border-right: 1px solid #ddd;
-        color: #555;
-        padding: 0 100px 0 13px;
-        border-radius: 2px 0 0 2px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        z-index: 10000;
-        user-select: none;
-        box-sizing: content-box;
-        &:after {
-            content: "\2193";
-            color: rgba(85, 85, 85, 0);
-            background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
-            height: 8px;
-            width: 10px;
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            margin-top: -6px;
-        }
-        &:hover,
-        &.active {
-            background: linear-gradient($shade_color, darken($shade_color, 7%));
-            cursor: pointer;
-            border-right-color: #ccc;
-        }
-        >span {
-            position: absolute;
-            top: 50%;
-            margin-top: -8px;
-            white-space: nowrap;
-            font-size: 15px;
-        }
-        ul {
-            display: none;
-            position: absolute;
-            top: 105%;
-            left: -1px;
-            font-size: 14px;
-            width: 225px;
-            background: #fff;
-            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 7px 0;
-        }
-        li {
-            list-style-type: none;
-            margin: 0;
-            padding: 5px 18px;
-            color: $highlight_color;
-            line-height: 1.2em;
-            position: relative;
-            &:hover {
-                background: $shade_color;
-            }
-            &.selected {
-                background: $highlight_color;
-                ;
-                color: #fff;
-            }
-        }
+    
+    #text {
+        color: white;
+        font-size: 6em;
     }
-    &.large {
-        max-width: 560px;
+    /* label color */
+    
+    .input-field label {
+        color: #000;
+    }
+    /* label focus color */
+    
+    .input-field input[type=text]:focus+label {
+        color: #2196f3 !important;
+    }
+    
+    .input-field input[type=password]:focus+label {
+        color: #2196f3 !important;
+    }
+    
+    .input-field input[type=email]:focus+label {
+        color: #2196f3 !important;
+    }
+    
+    .input-field input[type=number]:focus+label {
+        color: #2196f3 !important;
+    }
+    /* label underline focus color */
+    
+    .input-field input[type=text]:focus {
+        border-bottom: 1px solid #000;
+        color: #000;
+        box-shadow: 0 1px 0 0 #000;
+    }
+    /* valid color */
+    
+    .input-field input[type=text].valid {
+        border-bottom: 1px solid #000;
+        color: #2196f3 !important;
+        box-shadow: 0 1px 0 0 #000;
+    }
+    
+    .input-field input[type=password].valid {
+        border-bottom: 1px solid #000;
+        color: #2196f3 !important;
+        box-shadow: 0 1px 0 0 #000;
+    }
+    /* invalid color */
+    
+    .input-field input[type=text].invalid {
+        border-bottom: 1px solid #000;
+        color: #2196f3 !important;
+        box-shadow: 0 1px 0 0 #000;
+    }
+    /* icon prefix focus color */
+    
+    .input-field .prefix.active {
+        color: #2196f3 !important;
+    }
+    
+    .card-content:hover {
+        background-color: #2196f3;
+    }
+    
+    #cat {
+        padding-left: 20px;
+    }
+    
+    @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600);
+    $shade_color: #e7e7e7;
+    $highlight_color: #1C62A8;
+    * {
+        box-sizing: border-box;
+    }
+    
+    form {
+        margin: 30px auto 110px;
+    }
+    
+    .search_bar {
+        background: #fff;
+        border: #b7b7b7 solid 1px;
+        border-radius: 3px;
+        box-shadow: 0 0 3px #ccc;
+        position: relative;
+        font-family: 'Source Sans Pro', sans-serif;
+        max-width: 420px;
         input[type=text] {
-            font-size: 16px;
+            border: none;
+            box-shadow: none;
+            font-weight: 600;
+            font-size: 14px;
+            width: 80%;
+            padding: .5em;
+            margin: 0;
+            overflow: hidden;
+            &:focus {
+                outline: none;
+            }
+        }
+        button[type=submit] {
+            background: linear-gradient(lighten($highlight_color, 10%), lighten($highlight_color, 3%));
+            color: rgba(255, 255, 255, 0);
+            border: 1px solid $highlight-color;
+            width: 10%;
+            min-width: 56px;
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            border-radius: 0 3px 3px 0;
+            margin: 0;
+            user-select: none;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 18%;
+                right: 0;
+                bottom: 22%;
+                left: 4%;
+                background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/search-icon.svg") no-repeat center center;
+                background-size: contain;
+            }
+            &:hover,
+            &:focus {
+                background: linear-gradient(lighten($highlight_color, 15%), lighten($highlight_color, 7%));
+                box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+                cursor: pointer;
+            }
+        }
+        .search_dropdown {
+            font-weight: 600;
+            min-width: 17px;
+            background: linear-gradient(lighten($shade_color, 5%), darken($shade_color, 2%));
+            border-right: 1px solid #ddd;
+            color: #555;
+            padding: 0 100px 0 13px;
+            border-radius: 2px 0 0 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 10000;
+            user-select: none;
+            box-sizing: content-box;
+            &:after {
+                content: "\2193";
+                color: rgba(85, 85, 85, 0);
+                background: url("http://media.lib.byu.edu/assets/images/searchbar/1.0/down-arrow.svg") no-repeat top left;
+                height: 8px;
+                width: 10px;
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                margin-top: -6px;
+            }
+            &:hover,
+            &.active {
+                background: linear-gradient($shade_color, darken($shade_color, 7%));
+                cursor: pointer;
+                border-right-color: #ccc;
+            }
+            >span {
+                position: absolute;
+                top: 50%;
+                margin-top: -8px;
+                white-space: nowrap;
+                font-size: 15px;
+            }
+            ul {
+                display: none;
+                position: absolute;
+                top: 105%;
+                left: -1px;
+                font-size: 14px;
+                width: 225px;
+                background: #fff;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                padding: 7px 0;
+            }
+            li {
+                list-style-type: none;
+                margin: 0;
+                padding: 5px 18px;
+                color: $highlight_color;
+                line-height: 1.2em;
+                position: relative;
+                &:hover {
+                    background: $shade_color;
+                }
+                &.selected {
+                    background: $highlight_color;
+                    ;
+                    color: #fff;
+                }
+            }
+        }
+        &.large {
+            max-width: 560px;
+            input[type=text] {
+                font-size: 16px;
+            }
+        }
+         ::placeholder {
+            font-weight: 400;
         }
     }
-     ::placeholder {
-        font-weight: 400;
+    
+    .plus {
+        width: 100px;
+        cursor: pointer;
+        transition: all .3s ease 0s;
+        height: 100px;
+        background: black;
+        border-radius: 50%;
+        display: flex;
+        position: relative;
+        &__line {
+            width: 6px;
+            height: 50px;
+            background: white;
+            border-radius: 10px;
+            position: absolute;
+            left: calc(50% - 3px);
+            top: calc(50% - 25px);
+            &--h {
+                transform: rotate(90deg);
+            }
+        }
     }
-}
-
-.plus {
-    width: 100px;
-    cursor: pointer;
-    transition: all .3s ease 0s;
-    height: 100px;
-    background: black;
-    border-radius: 50%;
-    display: flex;
-    position: relative;
-    &__line {
-        width: 6px;
-        height: 50px;
-        background: white;
-        border-radius: 10px;
+    
+    .centered {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .plus:hover {
+        background: #e04216;
+    }
+    
+    i {
+        margin: 0 10px;
+    }
+    
+    @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+    fieldset,
+    label {
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        margin: 10px;
+    }
+    /****** Style Star Rating Widget *****/
+    
+    .rating {
+        border: none;
+        float: left;
+    }
+    
+    .rating>input {
+        display: none;
+    }
+    
+    .rating>label:before {
+        margin: 5px;
+        font-size: 1.25em;
+        font-family: FontAwesome;
+        display: inline-block;
+        content: "\f005";
+    }
+    
+    .rating>.half:before {
+        content: "\f089";
         position: absolute;
-        left: calc(50% - 3px);
-        top: calc(50% - 25px);
-        &--h {
-            transform: rotate(90deg);
-        }
     }
-}
-
-.centered {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.plus:hover {
-    background: #e04216;
-}
-
-i {
-    margin: 0 10px;
-}
-
-@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
-fieldset,
-label {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {
-    font-size: 1.5em;
-    margin: 10px;
-}
-
-
-/****** Style Star Rating Widget *****/
-
-.rating {
-    border: none;
-    float: left;
-}
-
-.rating>input {
-    display: none;
-}
-
-.rating>label:before {
-    margin: 5px;
-    font-size: 1.25em;
-    font-family: FontAwesome;
-    display: inline-block;
-    content: "\f005";
-}
-
-.rating>.half:before {
-    content: "\f089";
-    position: absolute;
-}
-
-.rating>label {
-    color: #ddd;
-    float: right;
-}
-
-
-/***** CSS Magic to Highlight Stars on Hover *****/
-
-.rating>input:checked~label,
-
-/* show gold star when clicked */
-
-.rating:not(:checked)>label:hover,
-
-/* hover current star */
-
-.rating:not(:checked)>label:hover~label {
-    color: #FFD700;
-}
-
-
-/* hover previous stars in list */
-
-.rating>input:checked+label:hover,
-
-/* hover current star when changing rating */
-
-.rating>input:checked~label:hover,
-.rating>label:hover~input:checked~label,
-
-/* lighten current selection */
-
-.rating>input:checked~label:hover~label {
-    color: #FFED85;
-}
-
-nav {
-    width: 100%;
-    margin: 0 auto;
-    background: #fff;
-    box-shadow: 0px 5px 0px #dedede;
-    line-height: 30px;
-}
-
-nav ul {
-    list-style: none;
-    text-align: center;
-    padding: 10px 25px 0 0;
-}
-
-nav ul li {
-    display: inline-block;
-}
-
-nav ul li a {
-    display: block;
-    padding: 0px;
-    text-decoration: none;
-    color: white;
-    font-weight: 800;
-    margin: 0 10px;
-}
-
-nav ul li a,
-nav ul li a:after,
-nav ul li a:before {
-    transition: all .5s;
-}
-
-
-/* nav ul li a:hover {
+    
+    .rating>label {
+        color: #ddd;
+        float: right;
+    }
+    /***** CSS Magic to Highlight Stars on Hover *****/
+    
+    .rating>input:checked~label,
+    /* show gold star when clicked */
+    
+    .rating:not(:checked)>label:hover,
+    /* hover current star */
+    
+    .rating:not(:checked)>label:hover~label {
+        color: #FFD700;
+    }
+    /* hover previous stars in list */
+    
+    .rating>input:checked+label:hover,
+    /* hover current star when changing rating */
+    
+    .rating>input:checked~label:hover,
+    .rating>label:hover~input:checked~label,
+    /* lighten current selection */
+    
+    .rating>input:checked~label:hover~label {
+        color: #FFED85;
+    }
+    
+    nav {
+        width: 100%;
+        margin: 0 auto;
+        background: #fff;
+        line-height: 30px;
+    }
+    
+    nav ul {
+        list-style: none;
+        text-align: center;
+        padding: 10px 25px 0 0;
+    }
+    
+    nav ul li {
+        display: inline-block;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 0px;
+        text-decoration: none;
+        color: white;
+        font-weight: 800;
+        margin: 0 10px;
+    }
+    
+    nav ul li a,
+    nav ul li a:after,
+    nav ul li a:before {
+        transition: all .5s;
+    }
+    /* nav ul li a:hover {
     color: #555;
 } */
-
-
-/* stroke */
-
-nav.stroke ul li a,
-nav.fill ul li a {
-    position: relative;
-}
-
-nav.stroke ul li a:after,
-nav.fill ul li a:after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 0%;
-    content: '.';
-    color: transparent;
-    background: #aaa;
-    height: 1px;
-}
-
-nav.stroke ul li a:hover:after {
-    width: 100%;
-}
-
-nav.fill ul li a {
-    transition: all 2s;
-}
-
-nav.fill ul li a:after {
-    text-align: left;
-    content: '.';
-    margin: 0;
-    opacity: 0;
-}
-
-nav.fill ul li a:hover {
-    color: #fff;
-    z-index: 1;
-}
-
-nav.fill ul li a:hover:after {
-    z-index: -10;
-    animation: fill 1s forwards;
-    -webkit-animation: fill 1s forwards;
-    -moz-animation: fill 1s forwards;
-    opacity: 1;
-}
-
-.navbar-fixed {
-    position: fixed;
-    height: 65px;
-}
-
-#dropdown1 {
-    width: 20%;
-}
+    /* stroke */
+    
+    nav.stroke ul li a,
+    nav.fill ul li a {
+        position: relative;
+    }
+    
+    nav.stroke ul li a:after,
+    nav.fill ul li a:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: #aaa;
+        height: 1px;
+    }
+    
+    nav.stroke ul li a:hover:after {
+        width: 100%;
+    }
+    
+    nav.fill ul li a {
+        transition: all 2s;
+    }
+    
+    nav.fill ul li a:after {
+        text-align: left;
+        content: '.';
+        margin: 0;
+        opacity: 0;
+    }
+    
+    nav.fill ul li a:hover {
+        color: #fff;
+        z-index: 1;
+    }
+    
+    nav.fill ul li a:hover:after {
+        z-index: -10;
+        animation: fill 1s forwards;
+        -webkit-animation: fill 1s forwards;
+        -moz-animation: fill 1s forwards;
+        opacity: 1;
+    }
+    
+    .dropdown-menu {
+        margin: 15px 30px;
+        width: 20%;
+    }
+    
+    .dropdown-content li:hover,
+    .dropdown-content li.active {
+        background-color: white;
+    }
