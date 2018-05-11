@@ -25,28 +25,78 @@ var storage = cloudinaryStorage({
 
 const uploadCloud = multer({ storage: storage });
 
-////////////////////////// EDIT PRODUCTS //////////////////////////
+
 function checkIfAdmin(req, res, next) {
     if (!req.isAuthenticated()) res.redirect('/login');
     if (req.user.role === "ADMIN") return next();
     return res.redirect('/products');
-};
+}
 
-router.get('/:id/edit', (req, res, next) => {
-    Product.findById(req.params.id)
+////////////////////////// PRODUCT DETAIL //////////////////////////
+router.get('/detail/:id', (req, res, next) => {
+    let _id = req.params.id;
+    Product.findById(_id)
         .then(product => {
-            res.render('products/edit', { product });
+            res.render('products/detail', product);
         })
         .catch(e => next(e))
 });
 
-router.post('/:id/edit', (req, res, next) => {
-    if (req.body.active) req.body.active = true;
-    Product.findByIdAndUpdate(req.params.id, req.body)
-        .then(() => {
-            res.redirect('/products/admin');
+////////////////////////// EDIT PRODUCTS //////////////////////////
+router.get('/edit/:id', (req, res, next) => {
+    let _id = req.params.id;
+    Product.findById(_id)
+        .then(product => {
+            res.render('products/edit', product);
         })
         .catch(e => next(e))
+})
+
+/* router.post('/edit/:id', (req, res, next) => {
+    let _id = req.body.id;
+    let _name = req.body.name;
+    let _description = req.body.description;
+    let _price = req.body.price;
+    let _stock = req.body.stock;
+    let _photos = req.body.photos;
+    Product.findByIdAndUpdate(req.params.id, {
+        name: _name,
+    }, (err) => {
+        if (err) {
+            console.log(err);
+            next();
+            return;
+        } else {
+            res.redirect('/profile')
+        }
+    });
+}); */
+
+router.post('/edit/:id', (req, res, next) => {
+    let _id = req.body.id;
+    console.log("este es el body goe" + _id)
+        //if (req.body.active) req.body.active = true;
+    Product.findByIdAndUpdate(req.params.id, req.body)
+        .then(() => {
+            res.redirect('/profile');
+        })
+        .catch(e => next(e))
+})
+
+
+
+
+////////////////////////// DELETE PRODUCTS //////////////////////////
+router.post('/delete/:id', (req, res, next) => {
+    let _id = req.params.id;
+    Product.findByIdAndRemove(_id, (err, docs) => {
+        if (err) {
+            next();
+            return;
+        } else {
+            res.redirect("/profile")
+        }
+    });
 });
 
 ////////////////////////// ADMIN PROFILE //////////////////////////
@@ -82,6 +132,8 @@ router.get('/admin', checkIfAdmin, (req, res, next) => {
 //         })
 //         .catch(e => next(e));
 // });
+
+
 
 //// Display products
 router.get('/', (req, res, next) => {

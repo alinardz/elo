@@ -21,6 +21,7 @@ const productSchema = new Schema({
         type: { type: String },
         coordinates: [Number]
     },
+
     user: {
         type: Schema.Types.ObjectId,
         ref: "User"

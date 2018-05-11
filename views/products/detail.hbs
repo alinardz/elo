@@ -1,12 +1,15 @@
 <section class="container">
 
-    <article class="portada" style="background-image:url('{{product.photos.[0]}}')"></article>
-    <h2>{{product.name}} - {{product.user.username}}</h2>
-    <p>
-        {{product.desc}}
-    </p>
-    <h3>$ {{product.price}}.00 MXN</h3>
+    <article class="portada" style="background-image:url('{{this.photos.[0]}}')"></article>
 
+                    <div class="card-image">
+                  <img class="resizeimg" src="{{this.photos.[0]}}" alt="Card image cap">
+                </div>
+    <h2>{{this.name}}</h2>
+    <p>
+        {{this.desc}}
+    </p>
+    <h3>$ {{this.price}}.00 MXN</h3>
 </section>
 
 <section class="container">

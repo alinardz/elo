@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <title>Elo</title>
-
+    <link rel="shortcut icon" href="/images/favicon-16.png" type="image/x-icon"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
@@ -18,14 +18,30 @@
 
 <body>
 
-  {{!-- NAV BAR --}}
-<div class="navbar-fixed ">
-  <nav class="black">
+{{!-- NAV BAR --}}
+<div class="navbar-fixed">
+
+  <nav class="black z-depth-0 stroke">
       <div class="nav-wrapper">
+
+          <!-- Dropdown Trigger -->
+          <a class='dropdown-trigger btn left' href='#' data-target='dropdown1'>Categorías</a>
+
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <li><a href="/tecnologia">Tecnología</a></li>
+            <li><a href="/ropa">Ropa y accesorios</a></li>
+            <li><a href="/inmuebles">Inmuebles</a></li>
+            <li><a href="/deportes">Deportes</a></li>
+            <li><a href="/servicios">Servicios</a></li>
+          </ul>
+
+
         <a href="/" class="brand-logo center" class="logo"><img src="/images/logo.png" id="logo"></a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="left hide-on-med-and-down over">
-          <li class="categorias size" id="cat">Categorías<i class="material-icons right">arrow_drop_down</i></li>
+
+{{!--         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="center hide-on-med-and-down over">
+          <li class="categorias size" id="cat">Categorías<i class="material-icons left">arrow_drop_down</i></li>
           <ul class="none" id="lista">
             <li><a href="/tecnologia" class="size">Tecnología</a>
             <ul></ul>
@@ -39,16 +55,16 @@
             <a href="#" class="size"><li>Servicios</li></a>
           
           </ul>
-        </ul>
+        </ul> --}}
         <ul class="right hide-on-med-and-down">
           <li><a class="modal-trigger size" href="#modal1">Crear cuenta</a></li>
           <li><a class="modal-trigger size" href="#login">Acceder</a></li>
           <li><a class="modal-trigger size" href="#login">Mi Cuenta</a></li>
           <li><a class="modal-trigger size" href="#login">Cerrar Sesión</a></li>
-
         </ul>
       </div>
     </nav>
+
   </div>
 
 

@@ -8,7 +8,7 @@ button:focus {
 }
 
 .renta {
-    padding: 10vh 30px;
+    padding: 20vh 30px;
 }
 
 a:focus {
@@ -40,15 +40,16 @@ a {
 #main {
     background-image: url(../images/portada.jpg);
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: -30vh;
 }
 
-.over:hover {
+
+/* .over:hover {
     background-color: rgba(0, 0, 0, 0.5);
-}
+} */
 
 .none {
     display: none;
@@ -65,7 +66,7 @@ a {
 }
 
 .size {
-    font-size: 1.3em;
+    font-size: 1em;
 }
 
 .boton {
@@ -101,7 +102,7 @@ footer {
 
 #text {
     color: white;
-    font-size: 3em;
+    font-size: 6em;
 }
 
 
@@ -357,4 +358,174 @@ form {
 
 i {
     margin: 0 10px;
+}
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+fieldset,
+label {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 10px;
+}
+
+
+/****** Style Star Rating Widget *****/
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating>.half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating>label {
+    color: #ddd;
+    float: right;
+}
+
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating>input:checked~label,
+
+/* show gold star when clicked */
+
+.rating:not(:checked)>label:hover,
+
+/* hover current star */
+
+.rating:not(:checked)>label:hover~label {
+    color: #FFD700;
+}
+
+
+/* hover previous stars in list */
+
+.rating>input:checked+label:hover,
+
+/* hover current star when changing rating */
+
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+
+/* lighten current selection */
+
+.rating>input:checked~label:hover~label {
+    color: #FFED85;
+}
+
+nav {
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0px 5px 0px #dedede;
+    line-height: 30px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    padding: 10px 25px 0 0;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    padding: 0px;
+    text-decoration: none;
+    color: white;
+    font-weight: 800;
+    margin: 0 10px;
+}
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+    transition: all .5s;
+}
+
+
+/* nav ul li a:hover {
+    color: #555;
+} */
+
+
+/* stroke */
+
+nav.stroke ul li a,
+nav.fill ul li a {
+    position: relative;
+}
+
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 0%;
+    content: '.';
+    color: transparent;
+    background: #aaa;
+    height: 1px;
+}
+
+nav.stroke ul li a:hover:after {
+    width: 100%;
+}
+
+nav.fill ul li a {
+    transition: all 2s;
+}
+
+nav.fill ul li a:after {
+    text-align: left;
+    content: '.';
+    margin: 0;
+    opacity: 0;
+}
+
+nav.fill ul li a:hover {
+    color: #fff;
+    z-index: 1;
+}
+
+nav.fill ul li a:hover:after {
+    z-index: -10;
+    animation: fill 1s forwards;
+    -webkit-animation: fill 1s forwards;
+    -moz-animation: fill 1s forwards;
+    opacity: 1;
+}
+
+.navbar-fixed {
+    position: fixed;
+    height: 65px;
+}
+
+#dropdown1 {
+    width: 20%;
 }
