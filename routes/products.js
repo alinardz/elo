@@ -150,6 +150,14 @@ router.get('/nuevo', (req, res) => {
     res.render('products/nuevo', { error: req.body.error });
 });
 
+router.get('/ropa', (req, res) => {
+    res.render('products/ropa', { error: req.body.error });
+});
+
+router.get('/inmuebles', (req, res) => {
+    res.render('products/inmuebles', { error: req.body.error });
+});
+
 //agrega el nuevo producto a la base de datos y sube imágenes a cloudinary
 router.post("/nuevo", uploadCloud.array("photos", 12), (req, res, next) => {
     req.body.photos = [];
