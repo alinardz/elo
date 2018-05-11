@@ -1,9 +1,10 @@
 <div id="principal">
 <div class="center">
-  <img src="images/categories/alina.jpg" class="profile circle">
+  <img src="images/categories/alina.png" class="profile circle">
+  <h4>Alina Rodríguez</h4>
 </div>
 
-<div class="stars">
+<div class="stars center">
   <fieldset class="rating">
       <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
       <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -27,6 +28,8 @@
 
 
 
+
+
 <div id="test-swipe-1" class="col s12">
   <div class="container">
     <div class="row">
@@ -35,23 +38,22 @@
             <div class="card">
               <a href="#">
                 <div class="card-image">
-                  <img class="resizeimg" src="{{this.photos.[0]}}" alt="Card image cap">
+                  
                 </div>
                 <div class="card-content">
+                  <div class="image"><img src="{{this.photos.[0]}}" alt="Card image cap"></div>
                   <p class="center">{{this.name}}</p>
-                  <p class="center">{{this.desc}}</p>
                   <p class="center">Ubicación</p>
-                  <p class="center">{{this.price}}</p>
+                  <p class="center">${{this.price}}.00 x día</p>
                   <p class="center">Disponible</p>
                   <p class="center">
-
-                    <a href="/edit/{{id}}"><i class="far fa-edit"></i></a>
-
-                      <form action="/delete/{{_id}}" method="POST">
-                          <button id="icono" type ="submit"><i class="far fa-trash-alt"></i></button>
-                      </form>  
-
-                  <a href="/detail/{{_id}}">Detalle</a>
+                  <form class="center" action="/delete/{{_id}}" method="POST">
+                    <button id="icono" type ="submit"><i class="far fa-trash-alt"></i></button>
+                  </form> 
+                  <br>
+                  <button class="center"><a href="/edit/{{id}}"></a><i class="far fa-edit"></i></button>
+                  <br>
+                  <button class="center"><a href="/detail/{{id}}"></a>Más detalles</button>
                 </div>
               </a>
             </div>

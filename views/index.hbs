@@ -15,7 +15,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-01.png" alt="sample101" /></div>
           <figcaption>
             <h5>Tecnología</h5>
           </figcaption>
@@ -25,7 +25,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-02.png"  alt="sample101" /></div>
           <figcaption>
             <h5>Vehículos</h5>
           </figcaption>
@@ -35,7 +35,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-03.png"  alt="sample101" /></div>
           <figcaption>
             <h5>Ropa</h5>
           </figcaption>
@@ -45,7 +45,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-04.png"  alt="sample101" /></div>
           <figcaption>
             <h5>Inmuebles</h5>
           </figcaption>
@@ -55,7 +55,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-05.png"  alt="sample101" /></div>
           <figcaption>
             <h5>Libros</h5>
           </figcaption>
@@ -65,7 +65,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-06.png"  alt="sample101" /></div>
           <figcaption>
             <h5>Videojuegos</h5>
           </figcaption>
@@ -75,7 +75,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-07.png"  alt="sample101" /></div>
           <figcaption>
             <h5>Herramientas</h5>
           </figcaption>
@@ -85,7 +85,7 @@
 
     <div class="col s12 m4 l3">
         <figure class="snip1518">
-          <div class="image"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample101.jpg" alt="sample101" /></div>
+          <div class="image"><img src="/images/cat-08.png"  alt="sample101" /></div>
           <figcaption>
             <h5>Muebles</h5>
           </figcaption>
@@ -183,9 +183,7 @@
 							lng: position.lng()
 						}
 					}
-					var isInRadius = google.maps.geometry.spherical.computeDistanceBetween(position,circle.overlay.getCenter()) <= circle.radius;
-					if(isInRadius) return alert("Adentro");
-					return alert("Afuera");	
+					var isInRadius = google.maps.geometry.spherical.computeDistanceBetween(position,circle.overlay.getCenter()) <= circle.radius;	
 				}
 				else{
 					console.log("ERROR");

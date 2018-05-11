@@ -140,7 +140,7 @@ footer {
   box-sizing: border-box; }
 
 form {
-  margin: 30px auto 110px; }
+  margin: 30px auto 0px; }
 
 .search_bar {
   background: #fff;
@@ -499,5 +499,9 @@ nav.fill ul li a:hover:after {
 
 .mapa {
   margin: 20px 10%; }
+
+.stars {
+  width: 100%;
+  margin: 0 45%; }
 
 /*# sourceMappingURL=style.css.map */
